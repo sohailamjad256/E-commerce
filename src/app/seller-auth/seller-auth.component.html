@@ -1,0 +1,47 @@
+<div class="seller-auth">
+
+<div *ngIf="!showLoginForm">
+  <h1 class="signup-text">Sign Up</h1>
+<form  class="form-container"  #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)">
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>First name</mat-label>
+    <input type="text" matInput  [(ngModel)]="firstName" name="firstName" required="">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput [(ngModel)]="password" name="password" required="" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput   [(ngModel)]="email" name="email"  >
+  </mat-form-field>
+
+  <button class="btn-submit"  mat-raised-button color="primary">Submit</button>
+  <span>Already have account click here to <a class="login-text" (click)="showLogin()">login</a></span>
+</form>
+</div>
+
+<!-- login-form -->
+
+<div *ngIf="showLoginForm" >
+  <h1 class="signup-text">Login Form</h1>
+  <p class="errormsg">{{authError}}</p>
+<form  class="form-container"  #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)">
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput   [(ngModel)]="email" name="email"  >
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput [(ngModel)]="password" name="password" required="" >
+  </mat-form-field>
+
+
+  <button class="btn-submit"  mat-raised-button color="primary">Submit</button>
+  <span>Dont have account click here to <a class="login-text" (click)="showSignUp()">Singup</a></span>
+</form>
+</div>
+
+</div>
+

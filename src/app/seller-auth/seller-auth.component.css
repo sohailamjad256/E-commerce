@@ -1,0 +1,29 @@
+.example-full-width {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn-submit{
+  width: 11%;
+  height: 35px;
+  background-color: dodgerblue;
+  border-radius: 5px;
+}
+.signup-text {
+  text-align: center;
+  color: blueviolet;
+}
+.login-text{
+  color: blue;
+  cursor: pointer;
+}
+.errormsg {
+  color: red;
+  text-align: center;
+}
